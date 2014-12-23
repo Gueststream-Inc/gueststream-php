@@ -1,0 +1,7 @@
+<phpunit bootstrap="./creds.php">
+    <testsuites>
+        <testsuite name="Gueststream's Test Suite">
+            <directory>./</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

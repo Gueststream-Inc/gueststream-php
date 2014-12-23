@@ -1,0 +1,25 @@
+{
+    "name": "gueststream/sdk",
+    "type": "library",
+    "description": "A PHP wrapper for Gueststream's API",
+    "keywords": ["gueststream", "vrp", "api"],
+    "homepage": "http://github.com/gueststream-inc",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josh Houghtelin",
+            "email": "josh@gueststream.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "guzzle/guzzle": "~3.7.0"
+    },
+    "require-dev": {
+        "mockery/mockery": ">=0.7.2",
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-4": { "Gueststream\\": "src/Gueststream/"}
+    }
+}
