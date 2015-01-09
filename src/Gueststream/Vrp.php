@@ -14,7 +14,7 @@ class Vrp
 
     public function __construct( $key, $client = null )
     {
-        $this->client = ( is_null( $client ) ) ? new \Gueststream\Client( $key ) : $client;
+        $this->client = ( is_null( $client ) ) ? new Client( $key ) : $client;
     }
 
     public function isOnline()
@@ -31,24 +31,24 @@ class Vrp
     {
         $obj = new \stdClass();
 
-        foreach($params as $key => $a_param) {
+        foreach ($params as $key => $a_param) {
             $obj->$key = $a_param;
         }
 
-        if(!isset($obj->page)){
+        if ( ! isset( $obj->page )) {
             $obj->page = 1;
         }
 
-        if(!isset($obj->limit)) {
+        if ( ! isset( $obj->limit )) {
             $obj->limit = 1000;
         }
 
-        if(!isset($obj->arrival)) {
+        if ( ! isset( $obj->arrival )) {
             $obj->showall = 1;
         }
 
-        $result = $this->client->post( 'search', [ 'search' => json_encode($obj) ] );
-        if($result) {
+        $result = $this->client->post( 'search', [ 'search' => json_encode( $obj ) ] );
+        if ($result) {
             return $this->client->detail;
         }
 
@@ -64,5 +64,13 @@ class Vrp
     public function getComplex( $complex )
     {
 
+    }
+
+    public function saveInquiry( Inquiry $inquiry )
+    {
+        $result = $this->client->post('addinquiry',['search' => json_encode($inquiry)]);
+        print_r($this->client->detail);
+        print_r($result);
+        return;
     }
 }

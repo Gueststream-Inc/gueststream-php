@@ -3,7 +3,7 @@ PHP Helper Library for Gueststream VRP
 
 ### Installing via Composer
 
-The recommended way to install the Guetsstream library is through [Composer](http://getcomposer.org).
+The recommended way to install the Gueststream VRP library is through [Composer](http://getcomposer.org).
 
 ```bash
 # Install Composer
