@@ -40,7 +40,7 @@ class Vrp
         }
 
         if ( ! isset( $obj->limit )) {
-            $obj->limit = 1000;
+            $obj->limit = 10;
         }
 
         if ( ! isset( $obj->arrival )) {
@@ -64,6 +64,19 @@ class Vrp
     public function getComplex( $complex )
     {
 
+    }
+
+    public function checkAvailability ()
+    {
+        $obj = [
+            'PromoCode' => 'RGLTWBOGO',
+            'Arrival' => '02/09/2015',
+            'Departure' => '02/12/2015',
+            'PropID' => 14135
+        ];
+        $result = $this->client->post("checkavail/",['obj' => json_encode($obj)]);
+        print_r($this->client->detail);
+        return $result;
     }
 
     public function saveInquiry( Inquiry $inquiry )
